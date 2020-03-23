@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--<html lang="en">-->
+<head>
+    <!--    <meta charset="UTF-8">-->
+    <title>Title</title>
+</head>
+<body>
+<table border="3">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>PASSWORD</th>
+    </tr>
+    <tr>
+        <!--/*@thymesVar id="user" type="java"*/-->
+        <td>  <h4 th:text="${user.id}"/>   </td>
+        <td>  <h4 th:text="${user.name}"/>   </td>
+        <td>  <h4 th:text="${user.password}"/>   </td>
+    </tr>
+</table>
+<a href="/logout">EXIT</a>
+</body>
+</html>

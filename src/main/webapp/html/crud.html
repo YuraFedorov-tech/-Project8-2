@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/admin/deleteUser}" method="post">
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>PASSWORD</th>
+            <th>EDIT USER</th>
+            <th>DELETE USER</th>
+        </tr>
+        <!--/*@thymesVar id="users" type="java"*/-->
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}">ID</td>
+            <td th:text="${user.name}">Name1</td>
+            <td th:text="${user.password}">Describe1</td>
+<!--            <td>-->
+<!--&lt;!&ndash;                <a href="/admin/updateUser?id=<c:out value='${User.id}' />">Edit</a>&ndash;&gt;-->
+<!--                <a href="/admin/updateUser?id=">Edit</a>-->
+<!--            </td>-->
+            <td>
+                <a th:href="@{'/admin/updateUser?id=' + ${user.id}}">Edit</a>
+            </td>
+            <td id="deleteUsers">
+                <input type="checkbox" name="Delete" th:value="${user.id}">
+            </td>
+        </tr>
+
+
+    </table>
+    <tr>
+        <td><input type="submit" value="DELETE"/></td>
+    </tr>
+<!--        <input type="submit" name="Delete" value="Delete selected users">-->
+
+</form>
+<h5>it`s clever man</h5>
+
+<a href="/logout">EXIT</a>
+</body>
+</html>
